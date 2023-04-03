@@ -3,14 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainComponent } from './components/main/main.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DetailsComponent } from './components/details/details.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent,
+    DetailsComponent,
+    GalleryComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
