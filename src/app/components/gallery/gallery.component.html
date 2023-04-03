@@ -1,4 +1,5 @@
 <app-pagination (emitter)="findPageable($event)"></app-pagination>
+
 <main class="gallery__container">
     <div class="card__container" *ngFor="let character of characters">
       <img src="{{ character.image }}" alt="">
@@ -7,5 +8,5 @@
       <p>{{ character.species }}</p>
       <p>{{ character.status }}</p>
     </div>
-  </main>
+</main>
   

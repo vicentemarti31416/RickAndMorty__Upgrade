@@ -15,10 +15,7 @@ export class GalleryComponent implements OnInit {
   constructor(private charactersService: CharactersService) { }
 
   ngOnInit(): void {
-    this.charactersService.findAll().subscribe((response) => {
-      this.characters = response.results;
-      console.log(this.characters)
-    });
+    this.findPageable(this.page);
   }
 
   public findPageable(page: number): void {
