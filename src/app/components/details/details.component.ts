@@ -1,5 +1,7 @@
+import { Character } from './../../shared/model/character';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CharactersService } from 'src/app/shared/service/characters.service';
 
 @Component({
   selector: 'app-details',
@@ -8,13 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  message: string | null = '';
+  character: Character = new Character();
 
-  constructor(private router: ActivatedRoute) {}
+  constructor(
+    private activatedRouter: ActivatedRoute,
+    private charactersService: CharactersService
+  ) {}
 
   ngOnInit(): void {
-    this.router.paramMap.subscribe((params) => {
-      this.message = params.get('message');
+    this.activatedRouter.params.subscribe((params) => {
+      let id: number = +params['id'];
+      if (id) {
+        this.charactersService.findById(id).subscribe((response) => {
+          this.character = response;
+        })
+      }
     })
   }
 }

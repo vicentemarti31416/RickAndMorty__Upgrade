@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CharactersService {
 
-  url: string = 'https://rickandmortyapi.com/api/character/'
+  url: string = 'https://rickandmortyapi.com/api/character'
 
   constructor(
     private http: HttpClient
@@ -18,6 +18,10 @@ export class CharactersService {
     return this.http.get<any>(this.url);
   }
 
+  public findById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/${id}`)
+  }
+ 
   public findPageable(page: number): Observable<any> {
     return this.http.get<any>(`${this.url}?page=${page}`);
   }

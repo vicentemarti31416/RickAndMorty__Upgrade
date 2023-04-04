@@ -7,7 +7,7 @@ import { MainComponent } from './components/main/main.component';
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent },
-  { path: 'details/:message', component: DetailsComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: '**', redirectTo: '/' }
 ];
 
