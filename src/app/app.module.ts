@@ -10,6 +10,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

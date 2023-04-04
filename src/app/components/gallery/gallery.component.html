@@ -1,5 +1,8 @@
-<app-pagination (emitter)="findPageable($event)"></app-pagination>
-<input #name type="text" (keyup)="findByName(name.value)">
+<app-pagination (emitter)="findPageableByName($event, name)"></app-pagination>
+<div>
+  <input type="text" [(ngModel)]="this.name">
+  <button (click)="findPageableByName(page, name)">Buscar</button>
+</div>
 <main class="gallery__container">
     <div class="card__container" *ngFor="let character of characters">
       <a [routerLink]="['/details', character.id]">
