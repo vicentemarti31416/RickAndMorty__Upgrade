@@ -11,8 +11,11 @@ export class GalleryComponent implements OnInit {
 
   characters: Character[] = [];
   page: number = 1;
+  name: string = '';
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(
+    private charactersService: CharactersService
+    ) { }
 
   ngOnInit(): void {
     this.findPageable(this.page);
@@ -20,6 +23,12 @@ export class GalleryComponent implements OnInit {
 
   public findPageable(page: number): void {
     this.charactersService.findPageable(page).subscribe((response) => {
+      this.characters = response.results;
+    })
+  }
+
+  public findByName(name: string): void {
+    this.charactersService.findByName(name).subscribe((response) => {
       this.characters = response.results;
     })
   }

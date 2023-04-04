@@ -25,5 +25,9 @@ export class CharactersService {
   public findPageable(page: number): Observable<any> {
     return this.http.get<any>(`${this.url}?page=${page}`);
   }
+
+  public findByName(name: string): Observable<any> {
+    return this.http.get<any>(`${this.url}?name=${name}`);
+  }
 }
 
