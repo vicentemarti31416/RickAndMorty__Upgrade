@@ -1,11 +1,11 @@
 <main class="gallery__container">
     <div *ngIf="character" class="card__container">
-      <a [routerLink]="['/details', character.id]">
-        <img src="{{ character.image }}" alt="character image">
-      </a>
+      <img src="{{ character.image }}" alt="character image">
       <p>{{ character.name }}</p>
       <p>{{ character.gender }}</p>
       <p>{{ character.species }}</p>
       <p>{{ character.status }}</p>
     </div>
 </main>
+
+
